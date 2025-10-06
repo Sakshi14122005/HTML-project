@@ -1,0 +1,58 @@
+<?php
+ $a=$_GET['no1'];
+ $b=$_GET['no2'];
+ $c=$_GET['op'];
+ 
+ switch($c)
+ {
+  case 1:mod($a,$b);
+  	break;
+  case 2:power($a,$b);
+  	break;
+  case 3:sumN($a);
+  	break;
+  case 4:fact($b);
+  	break;
+  }
+  
+ function mod($a,$b)
+ {
+   $c =$a%$b;
+   echo "mod of 1st & 2nd no=";
+   echo $c;
+ }
+ 
+ function power($a,$b)
+ {
+$finalnum=1;
+    $n1=$b;
+    while($n1>0)
+    {
+     $finalnum=$finalnum*$a;
+     }
+     $n1--;
+     echo $a raised to the power $b=$finalnum\n";
+     }
+     function sumN($a)
+     {
+      $num=$a;
+      $n=$num;
+      $sum=0;
+      while($n>=o)
+      {
+       $sum=$sum+$n;
+       $n--;
+       }
+       echo "sum of $num number is:$sum";
+       }
+       function fact($b)
+       {
+        $num=&b;
+        $factorial=1;
+        for($x=$num;$x>=1;$x--)
+        {
+         $factorial=$factorial*$x;
+         }
+         echo "factorial of $num is $factorial";
+         }
+         ?>
