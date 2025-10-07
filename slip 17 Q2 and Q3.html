@@ -1,0 +1,26 @@
+def manhattan_sum(points):
+    total = 0
+    n = len(points)
+    for i in range(n):
+        for j in range(i + 1, n):
+            x1, y1 = points[i]
+            x2, y2 = points[j]
+            total += abs(x1 - x2) + abs(y1 - y2)
+    return total
+
+points = [(1, 2), (3, 4), (2, 1), (5, 6)]
+print("Manhattan distance sum:", manhattan_sum(points))
+
+
+
+
+import pandas as pd
+
+df = pd.DataFrame({
+    'SCOR': [85, 90, 78, 88, 92],
+    'Height': [165, 170, 160, 172, 168],
+    'Weight': [60, 65, 58, 70, 62]
+})
+
+print("Mean:\n", df.mean())
+print("\nMedian:\n", df.median())
