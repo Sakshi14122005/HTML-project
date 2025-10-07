@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Associative Array Operations</title>
+</head>
+<body>
+    <h2>Associative Array Operations</h2>
+
+    <form action="" method="get">
+        <select name="choice">
+            <option value="chunk">a) Split array into chunks</option>
+            <option value="sortValues">b) Sort array by values</option>
+            <option value="filterEven">c) Filter even elements</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Perform Operation">
+    </form>
+</body>
+</html>
+
+
+
+<?php
+$array1 = array("a"=>1, "b"=>2, "c"=>3, "d"=>4, "e"=>5);
+
+$choice = $_GET['choice'] ?? '';
+
+echo "<h2>Array Operation Result</h2>";
+echo "<b>Array:</b><br>";
+print_r($array1);
+echo "<br><br>";
+
+switch($choice) {
+    case "chunk":
+        echo "<b>a) Split Array into Chunks:</b><br>";
+        print_r(array_chunk($array1, 2, true));
+        break;
+
+    case "sortValues":
+        echo "<b>b) Sort Array by Values (keeping keys):</b><br>";
+        asort($array1);
+        print_r($array1);
+        break;
+
+    case "filterEven":
+        echo "<b>c) Filter Even Elements:</b><br>";
+        $even = array_filter($array1, function($value) {
+            return $value % 2 == 0;
+        });
+        print_r($even);
+        break;
+
+    default:
+        echo "Please select a valid option from the menu.";
+}
+?>
